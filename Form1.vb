@@ -5,16 +5,16 @@
     End Function
     ' Check if is prime number
     Public Function isPrime(ByVal number As Integer) As Boolean
-        If number > 1 Then
-            For i As Integer = 2 To number - 1
-                If number Mod i = 0 Then
-                    Return False
-                End If
-            Next
-            Return True
-        Else
-            Return False
-        End If
+        Dim square As Double = Math.Sqrt(number)
+        Dim index As Integer
+        Dim result As Boolean
+        For index = 2 To square
+            If number Mod index = 0 Then
+                result = False
+            End If
+        Next
+        result = number > 1
+        Return result
     End Function
 
     Public Function CheckIfItIsFibonacci(n As Integer) As Boolean
@@ -74,6 +74,9 @@
         End While
         Return result
     End Function
+    Public Function CheckMatch(number As Integer) As Boolean
+        Return ReverseNumber(number) = number
+    End Function
 
     Public Function OnlyEvenOrOdd(number As Integer, isEven As Boolean) As Integer
         Dim digit, result As Integer
@@ -89,17 +92,62 @@
         Return ReverseNumber(result)
     End Function
 
-    Public Function BinaryToDecimal(binary As Integer) As Integer
-        Dim result, digit As Integer
-        result = 0
-        For index = 0 To binary
+    ' todo: Fix function for convert binary to decimal
+    'Public Function BinaryToDecimal(binary As Integer) As Integer
+    'End Function
 
-        Next
+    Public Function SearchDigit(number As Integer, search As Integer) As Boolean
+        Dim digit As Integer
+        Dim result As Boolean = False
+        While number > 0
+            digit = number Mod 10
+            number \= 10
+            If digit = search Then
+                result = True
+            End If
+        End While
         Return result
     End Function
 
-    Public Function CheckMatch(number As Integer) As Boolean
-        Return ReverseNumber(number) = number
+    Public Function FindIntersection(number As Integer, number2 As Integer) As Integer
+        Dim digit, result As Integer
+        result = 0
+        While number > 0
+            digit = number Mod 10
+            If SearchDigit(number2, digit) Then
+                result = result * 10 + digit
+            End If
+            number \= 10
+        End While
+        Return ReverseNumber(result)
+    End Function
+
+    Public Function VerifyIsExistPrime(number As Integer) As Boolean
+        Dim digit As Integer
+        Dim result As Boolean = False
+        While (number > 0) And (result = False)
+            digit = number Mod 10
+            number /= 10
+            If isPrime(digit) Then
+                result = True
+            End If
+        End While
+        Return result
+    End Function
+
+    Public Function VerifyIfEqualPrimeNumbers(number As Integer) As Boolean
+        Dim b As Boolean = True
+        Dim digit, otherDigit As Byte
+        digit = number Mod 10
+        number \= 10
+        While (number > 0) And (b = True)
+            otherDigit = number Mod 10
+            number \= 10
+            If Not otherDigit = digit Then
+                b = False
+            End If
+        End While
+        Return b
     End Function
 
     Private Sub PrimeNumbersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrimeNumbersToolStripMenuItem.Click
@@ -161,6 +209,45 @@
     Private Sub OnlyDoddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OnlyDoddToolStripMenuItem.Click
         Try
             Result.Text = OnlyEvenOrOdd(TextBox1.Text, False)
+        Catch ex As Exception
+            MsgBox(messageError)
+        End Try
+    End Sub
+
+    Private Sub BinaryToDecimalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BinaryToDecimalToolStripMenuItem.Click
+        Try
+            'Result.Text = BinaryToDecimal(TextBox1.Text)
+        Catch ex As Exception
+            MsgBox(messageError)
+        End Try
+    End Sub
+    Private Sub SearchNumberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchNumberToolStripMenuItem.Click
+        Try
+            Result.Text = SearchDigit(TextBox1.Text, TextBox2.Text)
+        Catch ex As Exception
+            MsgBox(messageError)
+        End Try
+    End Sub
+
+    Private Sub FindIntersectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FindIntersectionToolStripMenuItem.Click
+        Try
+            Result.Text = FindIntersection(TextBox1.Text, TextBox2.Text)
+        Catch ex As Exception
+            MsgBox(messageError)
+        End Try
+    End Sub
+
+    Private Sub VerifyIfIsExistANumberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerifyIfIsExistANumberToolStripMenuItem.Click
+        Try
+            Result.Text = VerifyIsExistPrime(TextBox1.Text)
+        Catch ex As Exception
+            MsgBox(messageError)
+        End Try
+    End Sub
+
+    Private Sub VerifyIfEqualPrimeNumbersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerifyIfEqualPrimeNumbersToolStripMenuItem.Click
+        Try
+            Result.Text = VerifyIfEqualPrimeNumbers(TextBox1.Text)
         Catch ex As Exception
             MsgBox(messageError)
         End Try
