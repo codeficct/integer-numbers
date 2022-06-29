@@ -34,8 +34,14 @@ Partial Class Form1
         Me.Sum4DigitsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReverseNumberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OnlyEvenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Result = New System.Windows.Forms.Label()
         Me.OnlyDoddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BinaryToDecimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchNumberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FindIntersectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerifyIfIsExistANumberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Result = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.VerifyIfEqualPrimeNumbersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,7 +57,7 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(246, 184)
+        Me.TextBox1.Location = New System.Drawing.Point(189, 181)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 23)
         Me.TextBox1.TabIndex = 1
@@ -80,7 +86,7 @@ Partial Class Form1
         '
         'Menu2ToolStripMenuItem
         '
-        Me.Menu2ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccesNumberToolStripMenuItem, Me.Sum2DigitToolStripMenuItem, Me.Sum3DigitsToolStripMenuItem, Me.Sum4DigitsToolStripMenuItem, Me.ReverseNumberToolStripMenuItem, Me.OnlyEvenToolStripMenuItem, Me.OnlyDoddToolStripMenuItem})
+        Me.Menu2ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccesNumberToolStripMenuItem, Me.Sum2DigitToolStripMenuItem, Me.Sum3DigitsToolStripMenuItem, Me.Sum4DigitsToolStripMenuItem, Me.ReverseNumberToolStripMenuItem, Me.OnlyEvenToolStripMenuItem, Me.OnlyDoddToolStripMenuItem, Me.BinaryToDecimalToolStripMenuItem, Me.SearchNumberToolStripMenuItem, Me.FindIntersectionToolStripMenuItem, Me.VerifyIfIsExistANumberToolStripMenuItem, Me.VerifyIfEqualPrimeNumbersToolStripMenuItem})
         Me.Menu2ToolStripMenuItem.Name = "Menu2ToolStripMenuItem"
         Me.Menu2ToolStripMenuItem.Size = New System.Drawing.Size(97, 20)
         Me.Menu2ToolStripMenuItem.Text = "Acces Number"
@@ -88,38 +94,68 @@ Partial Class Form1
         'AccesNumberToolStripMenuItem
         '
         Me.AccesNumberToolStripMenuItem.Name = "AccesNumberToolStripMenuItem"
-        Me.AccesNumberToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AccesNumberToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.AccesNumberToolStripMenuItem.Text = "Sum 1 digits"
         '
         'Sum2DigitToolStripMenuItem
         '
         Me.Sum2DigitToolStripMenuItem.Name = "Sum2DigitToolStripMenuItem"
-        Me.Sum2DigitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Sum2DigitToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.Sum2DigitToolStripMenuItem.Text = "Sum 2 digits"
         '
         'Sum3DigitsToolStripMenuItem
         '
         Me.Sum3DigitsToolStripMenuItem.Name = "Sum3DigitsToolStripMenuItem"
-        Me.Sum3DigitsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Sum3DigitsToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.Sum3DigitsToolStripMenuItem.Text = "Sum 3 digits"
         '
         'Sum4DigitsToolStripMenuItem
         '
         Me.Sum4DigitsToolStripMenuItem.Name = "Sum4DigitsToolStripMenuItem"
-        Me.Sum4DigitsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Sum4DigitsToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.Sum4DigitsToolStripMenuItem.Text = "Sum 4 digits"
         '
         'ReverseNumberToolStripMenuItem
         '
         Me.ReverseNumberToolStripMenuItem.Name = "ReverseNumberToolStripMenuItem"
-        Me.ReverseNumberToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReverseNumberToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.ReverseNumberToolStripMenuItem.Text = "Verify if is capicua"
         '
         'OnlyEvenToolStripMenuItem
         '
         Me.OnlyEvenToolStripMenuItem.Name = "OnlyEvenToolStripMenuItem"
-        Me.OnlyEvenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OnlyEvenToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.OnlyEvenToolStripMenuItem.Text = "Only Even"
+        '
+        'OnlyDoddToolStripMenuItem
+        '
+        Me.OnlyDoddToolStripMenuItem.Name = "OnlyDoddToolStripMenuItem"
+        Me.OnlyDoddToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.OnlyDoddToolStripMenuItem.Text = "Only Dodd"
+        '
+        'BinaryToDecimalToolStripMenuItem
+        '
+        Me.BinaryToDecimalToolStripMenuItem.Name = "BinaryToDecimalToolStripMenuItem"
+        Me.BinaryToDecimalToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.BinaryToDecimalToolStripMenuItem.Text = "Binary to decimal"
+        '
+        'SearchNumberToolStripMenuItem
+        '
+        Me.SearchNumberToolStripMenuItem.Name = "SearchNumberToolStripMenuItem"
+        Me.SearchNumberToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.SearchNumberToolStripMenuItem.Text = "Search digit"
+        '
+        'FindIntersectionToolStripMenuItem
+        '
+        Me.FindIntersectionToolStripMenuItem.Name = "FindIntersectionToolStripMenuItem"
+        Me.FindIntersectionToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.FindIntersectionToolStripMenuItem.Text = "Find intersection"
+        '
+        'VerifyIfIsExistANumberToolStripMenuItem
+        '
+        Me.VerifyIfIsExistANumberToolStripMenuItem.Name = "VerifyIfIsExistANumberToolStripMenuItem"
+        Me.VerifyIfIsExistANumberToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.VerifyIfIsExistANumberToolStripMenuItem.Text = "Verify if is exist a prime number"
         '
         'Result
         '
@@ -130,17 +166,25 @@ Partial Class Form1
         Me.Result.TabIndex = 3
         Me.Result.Text = "Result..."
         '
-        'OnlyDoddToolStripMenuItem
+        'TextBox2
         '
-        Me.OnlyDoddToolStripMenuItem.Name = "OnlyDoddToolStripMenuItem"
-        Me.OnlyDoddToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.OnlyDoddToolStripMenuItem.Text = "Only Dodd"
+        Me.TextBox2.Location = New System.Drawing.Point(295, 181)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 23)
+        Me.TextBox2.TabIndex = 4
+        '
+        'VerifyIfEqualPrimeNumbersToolStripMenuItem
+        '
+        Me.VerifyIfEqualPrimeNumbersToolStripMenuItem.Name = "VerifyIfEqualPrimeNumbersToolStripMenuItem"
+        Me.VerifyIfEqualPrimeNumbersToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.VerifyIfEqualPrimeNumbersToolStripMenuItem.Text = "Verify if equal prime numbers"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(573, 450)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Result)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
@@ -170,4 +214,10 @@ Partial Class Form1
     Friend WithEvents ReverseNumberToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OnlyEvenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OnlyDoddToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BinaryToDecimalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents SearchNumberToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FindIntersectionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VerifyIfIsExistANumberToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VerifyIfEqualPrimeNumbersToolStripMenuItem As ToolStripMenuItem
 End Class
